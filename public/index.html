@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Luca Comba">
+    <title>MinneHope</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <!-- LeafLet css -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+    <!-- VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- LeafLet JS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+    <!-- OUR API -->
+    <script type="text/javascript" src="scripts/script.js"></script>
+</head>
+<body>
+    <div id="vue">
+        <div class="container">
+            <div class="row sticky-top">
+                <div class="col">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <p>MinneHope</p>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-item nav-link active" href="/index.html">Find Assistance<span class="sr-only">(current)</span></a>
+                                <a class="nav-item nav-link" href="/volunteering.html">Volunteers</a>
+                                <a class="nav-item nav-link" href="/shelter.html">For Shelters</a>
+                                <a class="nav-item nav-link disabled" href="#">Disabled</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col ">
+                    <input type="text" v-model="searchbox" placeholder="Enter a shelter" v-on:keyup.enter="search">
+                    <input type="checkbox" v-model="food"><label>food</label>
+                    <input type="checkbox" v-model="home"><label>home</label>
+                    <input type="checkbox" v-model="domestic"><label>domesitc violence</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    MAP
+                    <div id="map" style="height: 400px;"></div>
+                </div>
+            </div>
+            <div class="row fixed-bottom">
+                <div class="col">
+                    <ul class="nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="/about.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/volunteering.html">Volunteers</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/shelter.html">Shelters List</a>
+                        </li>
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
